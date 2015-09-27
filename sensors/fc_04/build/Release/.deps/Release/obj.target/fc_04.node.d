@@ -1,0 +1,1 @@
+cmd_Release/obj.target/fc_04.node := g++ -shared -pthread -rdynamic  -Wl,-soname=fc_04.node -o Release/obj.target/fc_04.node -Wl,--start-group Release/obj.target/fc_04/fc_04.o -Wl,--end-group -lwiringPi
