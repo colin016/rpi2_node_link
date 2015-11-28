@@ -5,6 +5,10 @@
 	<body>
 		<h1>sound sensors</h1>
 		<h1 id='sound'></h1>
+		<h1>temperature</h1>
+		<h1 id='dht11t'></h1>
+		<h1>humidity</h1>
+		<h1 id='dht11h'></h1>
 	</body>
 	<script>
 		var socket = io(location.host);
@@ -16,5 +20,9 @@
 				$('#sound').html('no sound');
 			}
 		});
+		socket.on('dht11',function(data){
+			$('#dht11t').html(data.msg.temperature);
+			$('#dht11h').html(data.msg.humidity);
+		})
 	</script>
 </html>

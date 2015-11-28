@@ -56,6 +56,8 @@ app.use(function(err, req, res, next) {
 });
 var server = require('http').createServer(app)
 var io = require('socket.io')(server);
-server.listen(3000);
+server.listen(3000,function(){
+	console.log('listening on 3000');
+});
 io.on('connection',require('./routes/socket'));
 module.exports = app;
