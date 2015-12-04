@@ -2,19 +2,68 @@
 	<head></head>
 	<script src="http://libs.useso.com/js/jquery/2.1.0/jquery.min.js"></script>
 	<script src="https://cdn.socket.io/socket.io-1.3.5.js"></script>
-	<body>
-		<h1>sound sensors</h1>
-		<h1 id='sound'></h1>
+	<link rel="stylesheet" href="./action.css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="./index.css" media="screen" title="no title" charset="utf-8">
+	<link rel="stylesheet" href="./font-awesome.min.css" media="screen" title="no title" charset="utf-8">
+	<body class="gradient">
+		<header>
+			<span>Sensors</span>
+		</header>
+		<div class="content  zoomIn">
+			<div class="row">
+				<div class="item">
+					<i class="fa fa-sun-o animated"></i><br/>
+					<p class="animated">
+						温度
+					</p>
+				</div>
+				<div class="item">
+					<span id='dht11t' class="animated">~</span>
+				</div>
+				<div class="clear">
+
+				</div>
+			</div>
+			<div class="row">
+				<div class="item">
+					<i class="fa fa-heart animated"></i><br/>
+					<p class="animated">
+						湿度
+					</p>
+				</div>
+				<div class="item">
+					<span id='dht11h' class="animated"> ~  </span>
+				</div>
+				<div class="clear">
+
+				</div>
+			</div>
+		</div>
+
 	</body>
 	<script>
-		var socket = io('http://192.168.2.103:3000/');
-		socket.on('sound',function(data){
-			if(data && data.msg && data.msg == 'sound'){
-				$('#sound').html(data.msg);
-			}else{
-			
-				$('#sound').html('no sound');
+		document.addEventListener('DOMContentLoaded',function(){
+			var socket = io(location.host);
+			socket.on('sound',function(data){
+				if(data && data.msg && data.msg == 'sound'){
+					$('#sound').html(data.msg);
+				}else{
+
+					$('#sound').html('no sound');
+				}
+			});
+			socket.on('dht11',function(data){
+				$('#dht11t').html(data.msg.temperature+' ℃');
+				$('#dht11h').html(data.msg.humidity + ' °F');
+			})
+			var eles = document.getElementsByClassName('animated');
+			for (var i = 0; i < eles.length; i++) {
+				var item = eles[i];
+				item.className = item.className + " zoomIn";
+
 			}
+
 		});
+
 	</script>
 </html>

@@ -1,0 +1,65 @@
+html, body {
+    font: 13px/22px Arial;
+    color: #fff;
+    margin-top: 50px;
+}
+.gradient {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#4096ee+0,4096ee+100;Blue+Flat+%232 */
+    background: #4096ee;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, #4096ee 0%, #4096ee 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #4096ee 0%, #4096ee 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #4096ee 0%, #4096ee 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#4096ee', endColorstr='#4096ee', GradientType=0);
+    /* IE6-9 */
+}
+header {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    height: 50px;
+    background-color: rgb(255, 217, 18);
+    -webkit-box-shadow: 0px -4px 15px 5px rgba(0,0,0,0.62);
+    -moz-box-shadow: 0px -4px 15px 5px rgba(0,0,0,0.62);
+    box-shadow: 0px -4px 15px 5px rgba(0,0,0,0.62);
+}
+header span {
+    display: block;
+    vertical-align: middle;
+    height: 50px;
+    line-height: 50px;
+    font-size: 30px;
+}
+.row{
+    margin-top: 30px;
+}
+
+.content{
+    width:600px;
+    margin:0 auto;
+}
+
+.content i{
+    font-size: 80px;
+}
+.item{
+    width:80px;
+    float: left;
+    margin-right: 10px;
+}
+.item p{
+    text-align: center;
+}
+.content span{
+    font-size: 20px;
+    vertical-align: middle;
+}
+.clear{
+    clear: both;
+    /*display: none;*/
+}
