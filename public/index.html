@@ -42,15 +42,6 @@
 
 	</body>
 	<script>
-<<<<<<< HEAD
-		var socket = io(location.host);
-		socket.on('sound',function(data){
-			if(data && data.msg && data.msg == 'sound'){
-				$('#sound').html(data.msg);
-			}else{
-
-				$('#sound').html('no sound');
-=======
 		document.addEventListener('DOMContentLoaded',function(){
 			var socket = io(location.host);
 			socket.on('sound',function(data){
@@ -69,8 +60,6 @@
 			for (var i = 0; i < eles.length; i++) {
 				var item = eles[i];
 				item.className = item.className + " zoomIn";
-
->>>>>>> 3949012678c6bf7f1f92999899c69f17c3b5ca46
 			}
 
 		});
